@@ -23,7 +23,7 @@ fn setup() -> LocalEnvironment {
         dir.pop();
         dir.pop();
         dir.pop();
-        dir.push("tests/elfs/helloworld_rust_unoptimized.so");
+        dir.push("liblevel0.so");
         dir.to_str()
     }
     .unwrap();
