@@ -29,14 +29,13 @@ fn setup() -> LocalEnvironment {
     .unwrap();
 
     let helloworld_program =
-        Pubkey::from_str("H311ot3333333333333333333333333333333333333").unwrap();
+        Pubkey::from_str("EXBuYPNgBUXMTsjCbezENRUtFQzjUNZxvPGTd11Pznk5").unwrap();
     let payer = keypair(0);
     let greeting_account = keypair(1);
     let data: [u8; 4] = [0; 4];
 
     let mut env = LocalEnvironment::builder()
         .add_program(helloworld_program, path_hello_world_binary)
-        .add_programs_to_debug(&[&helloworld_program])
         .add_account_with_lamports(payer.pubkey(), system_program::ID, sol_to_lamports(1.0))
         .add_account_with_data(greeting_account.pubkey(), helloworld_program, &data, false)
         .build();
